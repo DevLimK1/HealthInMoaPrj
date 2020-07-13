@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헬스人모아</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script>
+        function openSlideMenu() {
+            document.getElementById('menu').style.width = '250px';
+            document.getElementById('content').style.marginLeft = '250px';
+            document.querySelector('.fa-bars').classList.add('d-none');
+        }
+
+        function closeSlideMenu() {
+            document.getElementById('menu').style.width = '0px';
+            document.getElementById('content').style.marginLeft = '0px';
+            document.querySelector('.fa-bars').classList.remove('d-none');
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <i class="logo fas fa-dumbbell"> 헬스人모아</i>
+        <!-- <img class="logo" src="https://i.postimg.cc/XYgSxQQZ/logo.png" alt=""> -->
+        <nav>
+            <ul class="nav-area">
+                <li><a href="#">헬스人들의 youtube</a></li>
+                <li><a href="#">헬스人들의 아이템</a></li>
+                <li><a href="#">헬스人들의 이야기</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-area">login</a>
+    </header>
+
+    <!-- ---------Sidebar Menu-------- -->
+    <aside class="aside">
+        <div id="content">
+            <span class="slide">
+                <a href="#" onclick="openSlideMenu()">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </span>
+
+
+            <div id="menu" class="nav">
+                <a href="#" class="close" onclick="closeSlideMenu()">
+                    <i class="fas fa-long-arrow-alt-left"></i>
+                </a>
+                <a href="#">남자 유튜버</a>
+                <a href="#">여자 유튜버</a>
+                <a href="#">운동 부위별</a>
+                <a href="#">재활 및 스트레칭</a>
+            </div>
+
+            <h1>Responsive Animated Sidebar</h1>
+        </div>
+    </aside>
+
+</body>
+
+</html>

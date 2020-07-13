@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:800');
+
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;            
+}
+body{
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    font-family:'Alegreya Sans', sans-serif;
+    font-weight: 600;
+    font-size: 20px; 
+    overflow-x: hidden;
+    /* background-color:black ;          */
+}
+
+a{
+    text-decoration: none;
+}
+
+/* ********* Navbar ******** */
+header{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 70px;
+    background: black;
+    overflow-x: hidden;
+}
+header .logo{
+    color: #ba000d;
+    font-size: 35px;
+    cursor: pointer;
+}
+header .nav-area{
+    list-style: none;
+}
+header .nav-area li{
+    display: inline-block;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+header .nav-area li a{
+    transition: all .3s ease 0s;
+    color: #DDD;
+}
+header .nav-area li a:hover{
+    color: #006C87;
+}
+header .btn-area {
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background: #006C87;            
+}
+
+
+
+/* *********Sidebar Menu******** */
+
+.aside{
+    position: relative;
+    background-color: #DDD;
+    height: 100%;
+}
+
+.nav {
+    height: 100%;
+    width: 0px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    opacity: .9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.nav a{
+    display: block;
+    padding: 20px 30px;
+    font-size: 25px;
+    text-decoration: none;
+    color: #ccc;
+}
+
+.nav a:hover{
+     color:#fff;
+     transition: 0.4s;
+}
+
+.nav .close{
+    position:absolute;
+    top: 10px;
+    right:22px;
+    margin-left: 50px;
+    font-size: 30px;
+}
+
+.slide a{
+    color:#000;
+    font-size:36px;
+}
+
+#content{
+    padding: 20px;
+    transition: margin-left 0.5s;
+    overflow: hidden;
+    width: 100%;
+}
