@@ -76,6 +76,7 @@ header .btn-area {
 }
 
 .nav {
+    display: block;
     height: 100%;
     width: 0px;
     position: absolute;
@@ -158,9 +159,12 @@ header .btn-area {
 
 /* ***********videos-section***************** */
 
+#videos-section {
+    padding: 50px 0px;
+}
 
 #videos-section article{
-    width: 355px;
+    width: 386px;
     height: 355px;
     display: inline-block;
     margin-right: 12px;
