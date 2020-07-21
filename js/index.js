@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   // *************** videos section ***************
-  const apikey = "AIzaSyCGHtbofr5C_j5YRooXlsqljlb6WYp1Lqc";
+  const apikey = "";
   const channelId = "UCLG1XzhSPuuJ6hqaHhQaFkA";
   const videoChannel = document.querySelector("#video-channel");
   // const videoContainer = document.querySelector("#video-container");
