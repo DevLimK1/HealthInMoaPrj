@@ -1,6 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
  
- 
   // *********Sidebar Menu**********
  
   let bars = document.querySelector(".bars");
@@ -21,7 +20,7 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   // *************** videos section ***************
-  const apikey = "";
+  const apikey = "AIzaSyCGHtbofr5C_j5YRooXlsqljlb6WYp1Lqc";
   const channelId = "UCLG1XzhSPuuJ6hqaHhQaFkA";
   const videoChannel = document.querySelector("#video-channel");
   // const videoContainer = document.querySelector("#video-container");
@@ -32,11 +31,11 @@ window.addEventListener("DOMContentLoaded", function () {
   fetch(channelEndpoint)
     .then((res) => res.json())
     .then((data) => {
-      // console.log(data);
+      console.log(data);
       // showChannel(data);
-
+      let maxResults = 24;
       const playlistId = data.items[0].contentDetails.relatedPlaylists.uploads;
-      requestPlayList(playlistId);
+      requestPlayList(playlistId,maxResults);
     });
 
   // function showChannel(data) {
@@ -76,13 +75,11 @@ window.addEventListener("DOMContentLoaded", function () {
   //   videoChannel.innerHTML = output;
   // }
 
-  function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
+  // function numberWithCommas(x) {
+  //   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  // }
 
-  function requestPlayList(playlistId) {
-    const maxResults = 12;
-
+  function requestPlayList(playlistId,maxResults) {
     const playlistURL = `https://www.googleapis.com/youtube/v3/playlistItems?key=${apikey}&playlistId=${playlistId}&part=snippet&maxResults=${maxResults}`;
 
     fetch(playlistURL)
@@ -100,23 +97,25 @@ window.addEventListener("DOMContentLoaded", function () {
       playListItems.map((item) => {
         const videoId = item.snippet.resourceId.videoId;
         const thumbnailsUrl = item.snippet.thumbnails.standard.url;
-        const thumbnailsTitle = item.snippet.channelTitle;
+        const channelTitle = item.snippet.channelTitle;
+        const title=item.snippet.title;
         const thumbnailsDescription = item.snippet.description;
         console.log(thumbnailsUrl);
-        console.log(thumbnailsDescription);
+        // console.log(thumbnailsDescription);
 
         output += `
         <div class="thums-box">
+        <div class="title text-center">${channelTitle}</div>
         <div class="imgBox">
             <img
                 src="${thumbnailsUrl}">
-        </div>
-        <div class="details">
-            <div class="content">
-                <h2>${thumbnailsTitle}</h2>
-                
+                <div class="details">
+                <div class="content">
+                    <h2>${title}</h2>
+                </div>
             </div>
         </div>
+       
         </div>
             `;
       });
@@ -134,4 +133,8 @@ window.addEventListener("DOMContentLoaded", function () {
       thumsContainer.innerHTML = "sorry, No videos uploaded!";
     }
   }
+
+
+  
+  
 });
